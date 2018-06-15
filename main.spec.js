@@ -89,6 +89,27 @@ describe('Test for getPathByHash', function () {
     });
 
     // write tests here
+
+    it('getPathByHash not Undefined', function () {
+        expect(getPathByHash('user/create')).not.toBeUndefined();
+    });
+
+    it('getPathByHash to object', function () {
+        expect(typeof getPathByHash('user/create')).toBe('object');
+    });
+
+    it('getPathByHash not number', function() {
+		expect(typeof getPathByHash('user/create')).not.toBe("number");
+	});
+
+	it('getPathByHash not string', function() {
+		expect(typeof getPathByHash('user/create')).not.toBe("string");
+	});
+
+	it('getPathByHash not boolean', function() {
+		expect(typeof getPathByHash('user/create')).not.toBe("boolean");
+	});
+
 });
 
 
